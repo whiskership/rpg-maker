@@ -1,0 +1,19 @@
+<open>did you see the new
+<color=#B11120>bar</color> they opened over
+there?
+	<option>Yes, I've seen it.
+		You did<speed 0><color=#904098>...</color>
+		
+		
+		<speed 4>That's cool<speed 1>...
+		
+		
+		<speed 3>I guess
+	</option>
+	<option>Nah, I haven't.
+		<speed 3>Well!!
+		
+		
+		It's just down there!
+	</option>
+</open>

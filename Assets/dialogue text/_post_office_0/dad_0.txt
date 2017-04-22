@@ -1,0 +1,68 @@
+<speed 4>hey <color=#CB4335>/player!</color>
+
+
+i know you're at work right now.
+
+
+<speed 2>i need to ask you a favor.
+
+
+<speed 3>i know your <color=#CB4335>mother</color> would be 
+pretty mad if she knew im making you
+leave work.
+<speed 4> but <color=#3498DB>LOOK!</color>
+
+
+<speed 3>i was driving and everything was fine.
+
+
+but suddenly my car was swerving around.
+
+
+and no matter how hard i hit the gas,
+i couldn't get the car move.
+
+turns out, i ran out of <color=#7D3C98>gasoline!</color>
+
+
+so look. i need you to go to the
+gas station and bring me some gas
+so i can get my car moving.<open>
+	<option>what!? i can't, im at work!
+		what!?...
+		.......
+		.......
+		you know what <color=#CB4335>/player.</color>
+		
+		
+		go fuck <color=#CB4335>yourself</color>.
+		
+		
+		i dont even charge you rent.
+		
+		
+		do whatever you want, ill figure out
+		how to get out of her.
+	</option>
+	<option>yeah dad im on my way
+		alright, hurry up.
+		
+		
+		i can't wait her forever.
+		
+		
+		huh???
+		
+		
+		where am i???
+		
+		
+		you'll figure it out.
+		
+		
+		this game is pretty <color=#3498DB>linear</color>.
+		
+		
+		peace out bro.
+	</option>
+</open>

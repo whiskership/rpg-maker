@@ -1,0 +1,17 @@
+hey there!
+
+
+you look like your looking
+for directions...
+
+i can help you with that.
+
+
+all you gotta do is ask.<open>
+	<option> wheres the post office?
+		the post office is stright that way!
+	</option>
+	<option> nothing! leave me alone.
+		fine.
+	</option>
+</open>

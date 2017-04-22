@@ -1,0 +1,7 @@
+this is normal speed.
+<speed 4>this is a bit faster.
+<speed 1>this is really slow.
+<speed 5>fffffffffffffffffffffff
+<speed 0>sssss <speed 4> fffffff
+ffff <speed 0> ssss <speed 4> ffff
+ffff

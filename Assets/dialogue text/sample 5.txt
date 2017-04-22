@@ -1,0 +1,11 @@
+hi this is text sample.
+<color=#C10120>bar.</color>
+
+first lets try out some colors.
+<color=#C10120>bar</color>
+
+b<color=#336DFF>lue</color>
+<color=#13FF00>green</color> and finally
+<color=#D7FF00>yellow!</color>
+t<speed 5>his is really fast
+<speed 0>this is slow...

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 37c48b8d7479ce3429d89274ea8a5cc6
+timeCreated: 1482204388
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Pokemon GB
+  fontNames:
+  - Pokemon GB
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

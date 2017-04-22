@@ -1,0 +1,20 @@
+[
+	{
+		"id":0,
+		"title":"special bracelet",
+		"value":10,
+		"slug":"special_bracelet"
+	},
+	{
+		"id":1,
+		"title":"not weed",
+		"value": 25,
+		"slug":"not_weed"
+	},
+	{
+		"id":2,
+		"title":"weed",
+		"value": 20,
+		"slug":"weed"
+	}
+]
