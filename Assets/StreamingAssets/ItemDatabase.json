@@ -16,5 +16,11 @@
 		"title":"weed",
 		"value": 20,
 		"slug":"weed"
+	},
+	{
+		"id": 3,
+		"title":"cookie",
+		"value": 0,
+		"slug":"cookie"
 	}
 ]

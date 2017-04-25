@@ -13,11 +13,23 @@ public class ItemObject : Interactable {
         }
     }
 
+    [SerializeField]
+    bool hideItem = true;
+    public bool CanHideItem {
+        get {
+            return hideItem;
+        }
+    }
+
     public Inventory inventoryDestination;
+
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Z) && IsWithinInteractableDistance == true) {
+        if (Input.GetKeyDown(KeyCode.Z) && IsWithinInteractableDistance == true
+            && GetComponent<ItemDialogue>().IsDialogueRunning == false) {
             inventoryDestination.AddItem(itemId);
-            HideItem();
+
+            if (hideItem == true)
+                HideItem();
         }
     }
 

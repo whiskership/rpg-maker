@@ -52,8 +52,9 @@ public class Interactable : MonoBehaviour {
 
     Transform activeNotification;
     public void CreateNotification(Vector2 notifPos) {
-        if (activeNotification == null && notificationFab != null)
+        if (activeNotification == null && notificationFab != null) {
             activeNotification = Instantiate(notificationFab, transform) as Transform;
+        }
 
         activeNotification.localPosition = notifPos;
         notificationActive = true;

@@ -26,8 +26,6 @@ public class EndOfDialogueEvent : EventManager {
         if (charDial.CurrentDialogue == whenThisDialogueEnds && charDial.IsDialogueEnded == true && GetComponent<Interactable>().IsWithinInteractableDistance == true && alreadyRan == false) {
             alreadyRan = true;
 
-            Debug.Log("ran");
-
             if (changeThisNpc != null) {
                 ChangeNPCSDialogue(changeThisNpc, changeToThisDialogue);
             }

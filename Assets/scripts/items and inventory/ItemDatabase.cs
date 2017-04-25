@@ -10,7 +10,6 @@ public class ItemDatabase : MonoBehaviour {
 
     void Awake() {
         itemData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/StreamingAssets/ItemDatabase.json"));
-
         ConstructItemDatabase();
     }
 
@@ -22,7 +21,13 @@ public class ItemDatabase : MonoBehaviour {
     }
 
     public Item FetchItemByID(int id) {
-        return database[id];
+        if (id < database.Count) {
+            return database[id];
+        }
+        else {
+            Debug.LogError("item not in databade, out of range");
+            return null;
+        }
     }
 }
 

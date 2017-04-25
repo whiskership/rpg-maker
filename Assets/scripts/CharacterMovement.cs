@@ -18,7 +18,7 @@ public class CharacterMovement : Movement {
     }
 
     public Transform[] path;
-    int currPath;
+    int currPath = 0;
 
     IEnumerator FollowPath(Transform[] path) {
         Vector2 pathDir = (path[currPath].position - transform.position).normalized;
@@ -28,8 +28,9 @@ public class CharacterMovement : Movement {
             yield return null;
         }
 
-        if (currPath + 1 >= path.Length)
+        if (currPath + 1 >= path.Length) {
             axisVector = Vector2.zero;
+        }
         else {
             currPath++;
             StartCoroutine(FollowPath(path));

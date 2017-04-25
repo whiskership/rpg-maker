@@ -34,16 +34,22 @@ public class CharacterDialogue : Dialogue {
 
         if (Input.GetKeyDown(KeyCode.Z) && (GetComponent<Interactable>().IsWithinInteractableDistance == true
             /*|| currentCharacterTalking == transform*/)) {
-            
+
             /*if (openDialogueSFX != null && currentCharacterTalking == null) {
                 GetComponent<AudioSource>().clip = openDialogueSFX;
                 GetComponent<AudioSource>().Play();
             }*/
 
+            //special function for fetch 
+            if (isFetchingItems == true && GetComponent<FetchItemsSystem>().CheckForItems()) {
+                GetComponent<FetchItemsSystem>().CheckForItems();
+                CurrentDialogue = GetComponent<FetchItemsSystem>().DialogueToGoTo;
+            }
+
             textComp.transform.parent.GetComponent<Image>().color = textCompColor;
 
-            RunDialogue(textFiles[currentDialogue]);
             currentCharacterTalking = transform;
+            RunDialogue(textFiles[currentDialogue]);
         }
     }
 

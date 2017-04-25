@@ -5,43 +5,54 @@ using UnityEngine.UI;
 
 public class Inventory : ItemDatabase {
     void Start() {
+        currentInventory = new Dictionary<Item, int>();
         InventoryToGUI();
     }
 
     [SerializeField]
     Transform inventoryGUI;
-    [SerializeField]
-    private string[] currentInventoryArray;
     public void InventoryToGUI() {
         for (int i = 0; i < inventoryGUI.childCount; i++) {
             inventoryGUI.GetChild(i).gameObject.SetActive(false);
         }
 
-        currentInventoryArray = new string[currentInventory.Count];
-
-        for (int i = 0; i < currentInventory.Count; i++) {
-            inventoryGUI.GetChild(i).gameObject.SetActive(true);
-            inventoryGUI.GetChild(i).GetComponent<Text>().text = currentInventory[i].Title;
-
-            currentInventoryArray[i] = currentInventory[i].Slug;
+        int a = 0;
+        foreach (var pair in currentInventory) {
+            inventoryGUI.GetChild(a).gameObject.SetActive(true);
+            inventoryGUI.GetChild(a).GetComponent<Text>().text = pair.Key.Title + " x" + pair.Value;
+            a++;
         }
     }
 
-    List<Item> currentInventory = new List<Item>();
-	public void AddItem(int id) {
+    //List<Item> currentInventory = new List<Item>();
+    Dictionary<Item, int> currentInventory;
+
+    public void AddItem(int id) {
         Item itemToAdd = FetchItemByID(id);
-        currentInventory.Add(itemToAdd);
+
+        if (!currentInventory.ContainsKey(itemToAdd)) {
+            currentInventory.Add(itemToAdd, 1);
+        }
+        else {
+            currentInventory[itemToAdd]++;
+        }
+
         InventoryToGUI();
-        Debug.Log(currentInventory[currentInventory.Count-1].Slug + " added to current inventory");
+        Debug.Log(FetchItemByID(id).Slug + " added to current inventory");
     }
 
     public void RemoveItem(int id) {
-        for (int i = 0; i < currentInventory.Count; i++) {
-            if (currentInventory[i].ID == id) {
-                currentInventory.RemoveAt(id);
-                return;
-            }
+        if (currentInventory.ContainsKey(FetchItemByID(id))) {
+            currentInventory.Remove(FetchItemByID(id));
+            return;
         }
+
         Debug.LogWarning("could not remove item because item not found in inventory!");
+    }
+
+    public Dictionary<Item, int> CurrentInventory {
+        get {
+            return currentInventory;
+        }
     }
 }

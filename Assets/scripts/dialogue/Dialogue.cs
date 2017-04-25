@@ -47,6 +47,7 @@ public class Dialogue : MonoBehaviour {
         isDialogueActive = true;
         isDialogueRunning = true;
 
+
         activeTextComp.transform.parent.gameObject.SetActive(true);
     }
 
@@ -98,6 +99,8 @@ public class Dialogue : MonoBehaviour {
             EndDialogue();
             return;
         }
+
+ 
 
         outputString = textArray[currentLine];
         int countedLines = 1;
@@ -201,6 +204,7 @@ public class Dialogue : MonoBehaviour {
         }
     }
 
+    protected bool isFetchingItems;
     private void DialogueActivatedFunctions() {
         if (outputString.Contains("<next>")) {
             if (outputString[outputString.IndexOf("<next") + "<next".Length] == '>') {
@@ -229,6 +233,15 @@ public class Dialogue : MonoBehaviour {
         if (outputString.Contains("<shaky>")) {
             //StartCoroutine(ShakeDialogue());
         }
+
+        if (outputString.Contains("<fetch>")) {
+            currentCharacterTalking.GetComponent<FetchItemsSystem>().StartQuest();
+            outputString = outputString.Remove(outputString.IndexOf("<fetch>"), "<fetch>".Length);
+            ogOutputString = ogOutputString.Remove(ogOutputString.IndexOf("<fetch>"), "<fetch>".Length);
+
+            isFetchingItems = true;
+        }
+
     }
 
     IEnumerator ShakeDialogue(int startChar, int endChar) {
